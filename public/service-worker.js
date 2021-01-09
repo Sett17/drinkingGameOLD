@@ -1,4 +1,4 @@
-cacheName = "cache-dev-v2.2.8"
+cacheName = "cache-rel-v0.5"
 const toCache = {
     'index.html': false,                        // true in depl
     'index.html?page=startmenu': false,         // -----""-----

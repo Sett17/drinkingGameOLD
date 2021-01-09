@@ -1,5 +1,5 @@
 // cache management
-cacheName = "cache-dev-v2.2.8"  // change to update cache
+cacheName = "cache-rel-v0.5"  // change to update cache
 document.querySelector('#version').innerHTML = cacheName    // display cache in corner and press it for full reload
 
 // constants
