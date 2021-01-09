@@ -1,0 +1,11 @@
+<div id="pregame-title">
+    Pregame
+</div>
+<div id="pregame-content">
+    <input type="text" name="playername" id="pregame-playernameInp" placeholder="Name" onfocus="inpFocusIn()"
+        onfocusout="inpFocusOut()">
+    <button id="pregame-addPlayerBtn" class="btn" onclick="addPlayer()">+</button>
+    <div id="pregame-playerlist">
+    </div>
+    <button id="pregame-playBtn" class="btn" onclick="changePage('play')">Trinken!</button>
+</div>

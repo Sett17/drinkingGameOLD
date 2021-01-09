@@ -1,0 +1,23 @@
+{
+  "short_name": "Trink!",
+  "name": "Trink! Trink!",
+  "icons": [
+    {
+      "src": "assets/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "888x888",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icon.png",
+      "type": "image/png",
+      "sizes": "800x800",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "./",
+  "background_color": "#1d1d1d",
+  "theme_color": "#1d1d1d",
+  "display": "standalone",
+  "orientation": "portrait"
+}
