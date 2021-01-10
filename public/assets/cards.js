@@ -1,3 +1,4 @@
+// prettier-ignore
 const cards = [
     {
         "title": "Schusselig?",
@@ -190,7 +191,7 @@ const cards = [
     },
     {
         "title": "Best of 3",
-        "text": "Spiele Schere-Stein-Papier gegen [NAME2]",
+        "text": "Spiele Schere-Stein-Papier gegen [NAME1]",
         "sips": 3,
         "all": false,
         "set": "Minigame"
