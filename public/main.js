@@ -91,7 +91,7 @@ function addCard(card) {
 			document.querySelector('#card').style.transform = `matrix(1, 0, 0, 1, 0, ${offsetY})`
 			document.querySelector('#card').style.opacity = '1.0'
 			setInterval(() => {
-				addDrags(document.querySelector('#card')) // adding drag ability once cardIn animation is complete
+				addInteraction(document.querySelector('#card')) // adding drag ability once cardIn animation is complete
 			}, animTimeIn)
 		}, 20)
 	}

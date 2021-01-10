@@ -74,6 +74,7 @@ function handleDragStart(e) {
 const animTimeRet = 100
 const animTimeBounce = 80
 const animTimeOut = 150
+const animTimeDef = 150
 let animTimeIn = 100
 if (isMobile) {
 	animTimeIn = 250 // doesn't really show with default value, 'cause mobile browser rendering is shit
@@ -169,11 +170,56 @@ function handleDragMove(e) {
 }
 // card dragging stuff end
 
-function addDrags(el) {
+function throwCard(dir, bottom = 0) {
+	if (!isMoving) {
+		let zoneSize = [document.body.clientWidth * 0.3, document.body.clientHeight * 0.33]
+		isMoving = true
+		document.querySelector('#card').style.transition = `all ${animTimeOut * 2}ms`
+		document.querySelector('#play-name').style.transition = `all ${animTimeOut * 2}ms`
+		document.querySelector('#play-name').style.opacity = 0.0
+		document.querySelector('#card').style.transform = getMatrix(
+			0.4 * Math.sign(dir),
+			Math.sign(dir) * zoneSize[0] * 2.5,
+			offsetY + bottom * zoneSize[1] * 2.3
+		)
+
+		if (gameRunning.get()) {
+			// next card
+			setTimeout(() => {
+				newCard()
+				isMoving = false
+			}, animTimeOut * 2 * 1.2)
+		} else {
+			// last card thrown out, back to startmenu
+			setTimeout(() => {
+				changePage('startmenu')
+			}, animTimeOut * 2 * 2) // longer pause, 'cause it kind of feels better
+		}
+	}
+}
+
+function addInteraction(el) {
 	// add dragging functionality to element
 	el.addEventListener('touchstart', handleDragStart, false)
 	el.addEventListener('touchend', handleDragEnd, false)
 	el.addEventListener('touchmove', handleDragMove, false)
+
+	window.onkeyup = (ev) => {
+		switch (ev.code) {
+			case 'ArrowRight':
+				throwCard(1)
+				break
+			case 'ArrowLeft':
+				throwCard(-1)
+				break
+			case 'ArrowDown':
+				throwCard(0, 1)
+				break
+
+			default:
+				break
+		}
+	}
 }
 
 function getMatrix(angle, tx, ty) {
@@ -209,6 +255,14 @@ Array.prototype.removeElement = function (obj) {
 
 String.prototype.capitalizeFirst = function () {
 	return this[0].toLocaleUpperCase() + this.substring(1)
+}
+
+function detectInpKeys(el) {
+	el.onkeyup = (e) => {
+		if (e.key === 'Enter') {
+			document.querySelector('#pregame-addPlayerBtn').click()
+		}
+	}
 }
 
 function reloadFresh() {

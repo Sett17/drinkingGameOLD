@@ -3,7 +3,7 @@
 </div>
 <div id="pregame-content">
     <input type="text" name="playername" id="pregame-playernameInp" placeholder="Name" onfocus="inpFocusIn()"
-        onfocusout="inpFocusOut()">
+        onfocusout="inpFocusOut()" onkeypress="detectInpKeys(this)">
     <button id="pregame-addPlayerBtn" class="btn" onclick="addPlayer()">+</button>
     <div id="pregame-playerlist">
     </div>

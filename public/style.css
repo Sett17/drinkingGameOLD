@@ -67,8 +67,8 @@ body {
 }
 
 .btn:hover {
-    color: #1d1d1d;
-    background-color: floralwhite;
+    color: #1d1d1d !important;
+    background-color: floralwhite !important;
 }
 
 /* ---------- startMenu ---------- */
