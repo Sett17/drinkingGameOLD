@@ -3,10 +3,10 @@ function isMobile() {
 	let hasTouchScreen = false
 	if ('maxTouchPoints' in navigator) {
 		// check for touch, probably breaks down with other touch stuff except phones
-		hasTouchScreen = navigator.maxTouchPoints > 0
+		hasTouchScreen = navigator.maxTouchPoints > 1
 	} else if ('msMaxTouchPoints' in navigator) {
 		// same as above
-		hasTouchScreen = navigator.msMaxTouchPoints > 0
+		hasTouchScreen = navigator.msMaxTouchPoints > 1
 	} else {
 		var mQ = window.matchMedia && matchMedia('(pointer:coarse)')
 		if (mQ && mQ.media === '(pointer:coarse)') {
