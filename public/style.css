@@ -183,15 +183,25 @@ a {
     outline: none;
 }
 
+#pregame-btnwrapper {
+    display: flex;
+    width: 100vw;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+#pregame-optionBtn {
+    height: 6vh;
+    width: 25vw;
+    border-radius: 6vh;
+    font-size: .7em;
+}
+
 #pregame-playBtn {
     height: 6vh;
-    width: 50vw;
+    width: 40vw;
     border-radius: 6vh;
     font-size: .9em;
-    border: floralwhite 2px solid;
-    background-color: transparent;
-    color: floralwhite;
-    outline: none;
 }
 
 .pregame-hidden {

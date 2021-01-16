@@ -7,5 +7,8 @@
     <button id="pregame-addPlayerBtn" class="btn" onclick="addPlayer()">+</button>
     <div id="pregame-playerlist">
     </div>
-    <button id="pregame-playBtn" class="btn" onclick="changePage('play')">Trinken!</button>
+    <div id="pregame-btnwrapper">
+        <button id="pregame-playBtn" class="btn" onclick="changePage('play')">Trinken!</button>
+        <button id="pregame-optionBtn" class="btn" onclick="changePage('option')">Optionen</button>
+    </div>
 </div>
