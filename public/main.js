@@ -6,6 +6,7 @@ document.querySelector('#version').innerHTML = cacheName // display cache in cor
 const startMenu = './compos/startmenu.compo'
 const preGame = './compos/pregame.compo'
 const playPage = './compos/play.compo'
+const optPage = './compos/options.compo'
 let cardCompo = ''
 fetch('./compos/card.compo')
 	.then((res) => res.text())
@@ -54,8 +55,12 @@ function init(site) {
 				})
 				currPage = playPage
 			} else {
+				x
 				changePage('pregame')
 			}
+			break
+		case 'options':
+			loadCompo(optPage)
 			break
 		default:
 			changePage('startmenu')

@@ -179,7 +179,7 @@ function throwCard(dir, bottom = 0) {
 		document.querySelector('#play-name').style.opacity = 0.0
 		document.querySelector('#card').style.transform = getMatrix(
 			0.4 * Math.sign(dir),
-			Math.sign(dir) * zoneSize[0] * 2.5,
+			Math.sign(dir) * zoneSize[0] * 3.5,
 			offsetY + bottom * zoneSize[1] * 2.3
 		)
 
