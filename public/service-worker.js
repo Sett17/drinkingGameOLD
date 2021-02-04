@@ -11,6 +11,7 @@ const toCache = {
     '?page=play': 					false,      // -----""-----
     'main.js': 						false,      // -----""-----
     'helpers.js': 					false,      // -----""-----
+    'options.js': 					false,      // -----""-----
     'style.css': 					true,       // -----""-----
     'manifest.webmanifest': 		true,       // -----""-----
     'assets/cards.js': 				false,      // always false

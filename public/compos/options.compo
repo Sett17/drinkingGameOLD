@@ -1,0 +1,27 @@
+<div id="options-top">
+    <div id="options-backbtn" class="btn" onclick="changePage('startmenu')">&#8592;</div>
+</div>
+
+<div id="options-switches">
+    <div id="options-playWrapper">
+        <div class="options-wrapperTitle">Spielablauf</div>
+        <div class="options-wrapperInside">
+            <div class="option-switch">
+                <div class="options-chkbx" data="time" onclick="options.toggleOption(this, this.getAttribute('data'))">
+                </div>
+                <div class="options-switchTitle"
+                    onclick="options.toggleOption(this.previousElementSibling, this.previousElementSibling.getAttribute('data'))">
+                    Zeit
+                </div>
+            </div>
+            <div class="option-switch">
+                <div class="options-chkbx" data="count" onclick="options.toggleOption(this, this.getAttribute('data'))">
+                </div>
+                <div class="options-switchTitle"
+                    onclick="options.toggleOption(this.previousElementSibling, this.previousElementSibling.getAttribute('data'))">
+                    Anzahl
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
