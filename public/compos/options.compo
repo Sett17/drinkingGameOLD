@@ -7,18 +7,16 @@
         <div class="options-wrapperTitle">Spielablauf</div>
         <div class="options-wrapperInside">
             <div class="option-switch">
-                <div class="options-chkbx" data="time" onclick="options.toggleOption(this, this.getAttribute('data'))">
+                <div class="options-chkbx" data="time" onclick="options.toggleGameMode()">
                 </div>
-                <div class="options-switchTitle"
-                    onclick="options.toggleOption(this.previousElementSibling, this.previousElementSibling.getAttribute('data'))">
+                <div class="options-switchTitle" onclick="options.toggleGameMode()">
                     Zeit
                 </div>
             </div>
             <div class="option-switch">
-                <div class="options-chkbx" data="count" onclick="options.toggleOption(this, this.getAttribute('data'))">
+                <div class="options-chkbx" data="count" onclick="options.toggleGameMode()">
                 </div>
-                <div class="options-switchTitle"
-                    onclick="options.toggleOption(this.previousElementSibling, this.previousElementSibling.getAttribute('data'))">
+                <div class="options-switchTitle" onclick="options.toggleGameMode()">
                     Anzahl
                 </div>
             </div>
