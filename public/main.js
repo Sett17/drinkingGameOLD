@@ -60,7 +60,7 @@ function init(site) {
 			}
 			break
 		case 'options':
-			loadCompo(optPage).then(_ => options.updateGameModeView())
+			loadCompo(optPage).then(_ => options.updateViews())
 			break
 		default:
 			changePage('startmenu')
