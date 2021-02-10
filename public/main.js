@@ -104,6 +104,8 @@ function addCard(card) {
 
 function makeCard(use) {
 	let card = cardCompo
+	const difficulty = options.getDifficulty()
+	const mul = difficulty === 0 ? .5 : difficulty === 1 ? 1 : 2.24
 	try {
 		let choosenPlayer = 'Alle'
 		if (!use.all) {
@@ -124,7 +126,8 @@ function makeCard(use) {
 			.replace('*TEXT*', use.text)
 			.replace('*SET*', use.set)
 		if (use.sips >= 0) {
-			card = card.replace('*SIPS*', use.sips)
+			console.log(`sips: ${use.sips} * ${mul} = ${use.sips * mul}`)
+			card = card.replace('*SIPS*', Math.ceil(use.sips * mul))
 		} else {
 			card = card.replace('*SIPS*', '&#x221e;')
 		}

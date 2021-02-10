@@ -44,7 +44,6 @@ const options = {
     },
     getDifficulty: () => {
         this.difficultyLvl = this.difficultyLvl || parseInt(sess.get('difficultyLvl')) || 0
-        console.log(this.difficultyLvl)
         return this.difficultyLvl
     },
     updateDifficultyView: () => {
@@ -71,4 +70,6 @@ const options = {
         }
     }
     // ---------------------------
+
+    
 }
