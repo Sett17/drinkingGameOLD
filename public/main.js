@@ -32,6 +32,7 @@ function init(site) {
 	}
 	switch (site[0]) {
 		case 'startmenu': // serve startmenu
+			gameRunning.turnOff()
 			loadCompo(startMenu)
 			currPage = startMenu
 			break
@@ -55,7 +56,6 @@ function init(site) {
 				})
 				currPage = playPage
 			} else {
-				x
 				changePage('pregame')
 			}
 			break
@@ -125,6 +125,7 @@ function makeCard(use) {
 			.replace('*TITLE*', use.title)
 			.replace('*TEXT*', use.text)
 			.replace('*SET*', use.set)
+			.replace('*COLOR*', `hsl(${120 - 60 * difficulty}, 90%, 64%)`)
 		if (use.sips >= 0) {
 			console.log(`sips: ${use.sips} * ${mul} = ${use.sips * mul}`)
 			card = card.replace('*SIPS*', Math.ceil(use.sips * mul))

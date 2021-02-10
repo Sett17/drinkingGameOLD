@@ -50,6 +50,11 @@ function coerce(num, min, max) {
 	}
 }
 
+function mapRange(inp, inpStart, inpEnd, outpStart, outpEnd) {
+	// return output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
+	return outpStart + ((outpEnd - outpStart) / (inpEnd - inpStart)) * (inp - inpStart)
+}
+
 // card dragging stuff
 let oriX = 0,
 	oriY = 0,
