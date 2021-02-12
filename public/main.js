@@ -1,5 +1,5 @@
 // cache management
-cacheName = 'cache-rel-v0.6' // change to update cache
+cacheName = 'cache-beta-v0.7' // change to update cache
 document.querySelector('#version').innerHTML = cacheName // display cache in corner and press it for full reload
 
 // composition elements

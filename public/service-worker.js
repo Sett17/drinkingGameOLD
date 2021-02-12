@@ -1,30 +1,30 @@
-cacheName = 'cache-rel-v0.6'
+cacheName = 'cache-beta-v0.7'
 // prettier-ignore
 const toCache = {
-    //what comes after url:           cache-first?  
-    'index.html': 					false,      // true in depl
-    'index.html?page=startmenu': 	false,      // -----""-----
-    '?page=startmenu': 				false,      // -----""-----
-    'index.html?page=pregame': 		false,      // -----""-----
-    '?page=pregame': 				false,      // -----""-----
-    'index.html?page=play': 		false,      // -----""-----
-    '?page=play': 					false,      // -----""-----
-    'main.js': 						false,      // -----""-----
-    'helpers.js': 					false,      // -----""-----
-    'options.js': 					false,      // -----""-----
-    'style.css': 					true,       // -----""-----
-    'manifest.webmanifest': 		true,       // -----""-----
-    'assets/cards.js': 				false,      // always false
-    'assets/icon-ios.png': 			true,       // always true
-    'assets/icon.webp': 			true,       // ----"""----
-    'assets/icon.png': 				true,       // ----"""----
-    'assets/maskable_icon.png': 	true,       // ----"""----
-    'assets/SF-UI-Text-Regular.otf':true,       // ----"""----
-    'compos/card.compo': 			true,       // ----"""----
-    'compos/play.compo': 			true,       // ----"""----
-    'compos/pregame.compo': 		true,       // ----"""---- 
-    'compos/startmenu.compo': 		true,       // ----"""----
-    'compos/options.compo': 		true        // ----"""----
+	//what comes after url:           cache-first?  
+	'index.html': false,      // true in depl
+	'index.html?page=startmenu': false,      // -----""-----
+	'?page=startmenu': false,      // -----""-----
+	'index.html?page=pregame': false,      // -----""-----
+	'?page=pregame': false,      // -----""-----
+	'index.html?page=play': false,      // -----""-----
+	'?page=play': false,      // -----""-----
+	'main.js': false,      // -----""-----
+	'helpers.js': false,      // -----""-----
+	'options.js': false,      // -----""-----
+	'style.css': true,       // -----""-----
+	'manifest.webmanifest': true,       // -----""-----
+	'assets/cards.js': false,      // always false
+	'assets/icon-ios.png': true,       // always true
+	'assets/icon.webp': true,       // ----"""----
+	'assets/icon.png': true,       // ----"""----
+	'assets/maskable_icon.png': true,       // ----"""----
+	'assets/SF-UI-Text-Regular.otf': true,       // ----"""----
+	'compos/card.compo': true,       // ----"""----
+	'compos/play.compo': true,       // ----"""----
+	'compos/pregame.compo': true,       // ----"""---- 
+	'compos/startmenu.compo': true,       // ----"""----
+	'compos/options.compo': true        // ----"""----
 }
 
 // service worker with dynamic strategy
