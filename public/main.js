@@ -108,7 +108,7 @@ function addCard(card) {
 
 function makeCard(use) {
 	let card = cardCompo
-	const difficulty = options.getDifficulty()
+	const difficulty = options.getDifficulty() // for calc color later on
 	const mul = difficulty === 0 ? .5 : difficulty === 1 ? 1 : 2.24
 	try {
 		if (cardCounter.get() === -1) {
@@ -132,8 +132,8 @@ function makeCard(use) {
 			.replace('*TITLE*', use.title)
 			.replace('*TEXT*', use.text)
 			.replace('*SET*', use.set)
-			.replace('*COLOR*', `hsl(${120 - 60 * difficulty}, 90%, 64%)`)
-		if (use.sips >= 0) {
+			.replace('*COLOR*', `hsl(${120 - 60 * difficulty}, 90%, 64%)`) // calc color from diffitculty
+		if (use.sips >= 0) { // inifity char when <0 aka. chug it!
 			console.log(`sips: ${use.sips} * ${mul} = ${use.sips * mul}`)
 			card = card
 				.replace('*SIPS*', Math.ceil(use.sips * mul))

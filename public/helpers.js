@@ -259,10 +259,12 @@ Array.prototype.removeElement = function (obj) {
 }
 
 String.prototype.capitalizeFirst = function () {
+	// prototype that returns string with first char capitalized
 	return this[0].toLocaleUpperCase() + this.substring(1)
 }
 
 function detectInpKeys(el) {
+	// adding 'enter' functionality for player input; kind of confusing fn name
 	el.onkeyup = (e) => {
 		if (e.key === 'Enter') {
 			document.querySelector('#pregame-addPlayerBtn').click()
@@ -351,6 +353,7 @@ const availCards = {
 }
 
 const playerList = {
+	// obj to keep track of the players
 	players: undefined, // array
 	get: () => {
 		playerList.players = playerList.players || sess.get('playerList') || []
@@ -374,7 +377,8 @@ const playerList = {
 
 
 const cardCounter = {
-	limit: 10,
+	// obj to keep track of how into the game u are
+	limit: 10, // hard coded game length
 	cardCnt: 0,
 	get: () => {
 		cardCounter.cardCnt = cardCounter.cardCnt
