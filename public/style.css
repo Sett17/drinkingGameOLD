@@ -121,14 +121,15 @@ a {
 
 #options-backbtn {
     font-size: min(10vw, 75px);
+    line-height: min(10vw, 75px);
     margin-top: 2vh;
     margin-left: 2vh;
     width: min(11vw, 85px);
     height: min(11vw, 85px);
     border-radius: min(11vw, 85px);
     padding: min(3vw, 30px);
-    line-height: min(10vw, 75px);
-    align-items: unset;
+    align-items: center;
+    justify-content: center;
 }
 
 

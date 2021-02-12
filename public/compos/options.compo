@@ -1,5 +1,5 @@
 <div id="options-top">
-    <div id="options-backbtn" class="btn" onclick="changePage('startmenu')">&#8592;</div>
+    <div id="options-backbtn" class="btn" onclick="changePage('startmenu')">&#171;</div>
 </div>
 
 <div id="options-switches">

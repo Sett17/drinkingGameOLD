@@ -5,7 +5,7 @@
     <button class="startMenu-btn btn" id="playBtn" onclick="changePage('pregame')">
         Spielen!
     </button>
-    <button class="startMenu-btn btn" id="playBtn" onclick="changePage('options')">
+    <button class="startMenu-btn btn" id="optionbBtn" onclick="changePage('options')">
         Einstellungen
     </button>
 </div>

@@ -46,13 +46,16 @@ function init(site) {
 			currPage = preGame
 			break
 		case 'play': // serve playpage if at least 2 players present
+			cardCounter.get() // just to initialize internal obj variables
 			let playerCount = playerList.get().length
 			// let playerCount = 999 // dbg
 			if (playerCount > 1) {
 				availCards.update(cards) // updates deck with all cards, only does something if game is not running
 				loadCompo(playPage).then((_) => {
-					gameRunning.turnOn()
-					newCard()
+					setTimeout(() => {
+						gameRunning.turnOn()
+						newCard()
+					}, 20)
 				})
 				currPage = playPage
 			} else {
@@ -71,6 +74,7 @@ function init(site) {
 
 function newCard() {
 	// idk why I split all this up but here it is now
+	cardCounter.incr()
 	addCard(chooseCard())
 }
 
@@ -107,6 +111,9 @@ function makeCard(use) {
 	const difficulty = options.getDifficulty()
 	const mul = difficulty === 0 ? .5 : difficulty === 1 ? 1 : 2.24
 	try {
+		if (cardCounter.get() === -1) {
+			throw 'Game ending'
+		}
 		let choosenPlayer = 'Alle'
 		if (!use.all) {
 			// if card's specific to person, choose a rnd person
@@ -128,9 +135,11 @@ function makeCard(use) {
 			.replace('*COLOR*', `hsl(${120 - 60 * difficulty}, 90%, 64%)`)
 		if (use.sips >= 0) {
 			console.log(`sips: ${use.sips} * ${mul} = ${use.sips * mul}`)
-			card = card.replace('*SIPS*', Math.ceil(use.sips * mul))
+			card = card
+				.replace('*SIPS*', Math.ceil(use.sips * mul))
 		} else {
-			card = card.replace('*SIPS*', '&#x221e;')
+			card = card
+				.replace('*SIPS*', '&#x221e;')
 		}
 	} catch (error) {
 		// error thrown when use is undefined, aka chooseCard returns undefined
@@ -140,6 +149,7 @@ function makeCard(use) {
 			.replace('*TEXT*', 'Danke fürs Spielen!<br>Wische einfach diese Karte weg.')
 			.replace('*SET*', 'Ehre')
 			.replace('*SIPS*', '&#x221e;')
+			.replace('*COLOR*', 'url(#rainbow)')
 		document.querySelector('#play-name').innerHTML = 'Alle'
 		gameRunning.turnOff()
 	}

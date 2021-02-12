@@ -325,50 +325,64 @@ const gameRunning = {
 
 const availCards = {
 	// obj to keep track of the deck
-	deck: [],
+	deck: undefined, // array
 	get: () => {
-		this.deck = this.deck || sess.get('availCards') || [] // set deckfrom sessionStorage if not set before
-		return this.deck
+		availCards.deck = availCards.deck || sess.get('availCards') || [] // set deckfrom sessionStorage if not set before
+		return availCards.deck
 	},
 	update: (par) => {
 		if (!gameRunning.get()) {
 			// only update deckif game is not running
-			this.deck = par
-			sess.set('availCards', this.deck)
+			availCards.deck = par
+			sess.set('availCards', availCards.deck)
 		} else {
-			this.deck = sess.get('availCards') // get current deck from sessionStorage
+			availCards.deck = sess.get('availCards') // get current deck from sessionStorage
 		}
 	},
 	remove: (el) => {
 		// removes single card from deck
-		console.log(this.deck.length)
-		this.deck.removeElement(el)
-		sess.set('availCards', this.deck)
+		availCards.deck.removeElement(el)
+		sess.set('availCards', availCards.deck)
 	},
 	rng: () => {
-		this.deck = this.deck || sess.get('playerList') || []
-		return this.deck[Math.floor(Math.random() * this.deck.length)]
+		availCards.deck = availCards.deck || sess.get('playerList') || []
+		return availCards.deck[Math.floor(Math.random() * availCards.deck.length)]
 	},
 }
 
 const playerList = {
-	players: [],
+	players: undefined, // array
 	get: () => {
-		this.players = this.players || sess.get('playerList') || []
-		return this.players
+		playerList.players = playerList.players || sess.get('playerList') || []
+		return playerList.players
 	},
 	add: (el) => {
-		this.players.push(el)
-		sess.set('playerList', this.players)
+		playerList.players.push(el)
+		sess.set('playerList', playerList.players)
 		updatePlayerList()
 	},
 	remove: (el) => {
-		this.players.removeElement(el)
-		sess.set('playerList', this.players)
+		playerList.players.removeElement(el)
+		sess.set('playerList', playerList.players)
 		updatePlayerList()
 	},
 	rng: () => {
-		this.players = this.players || sess.get('playerList') || []
-		return this.players[Math.floor(Math.random() * this.players.length)].name
+		playerList.players = playerList.players || sess.get('playerList') || []
+		return playerList.players[Math.floor(Math.random() * playerList.players.length)].name
 	},
+}
+
+
+const cardCounter = {
+	limit: 10,
+	cardCnt: 0,
+	get: () => {
+		cardCounter.cardCnt = cardCounter.cardCnt
+		console.log(cardCounter.cardCnt)
+		return (cardCounter.cardCnt > cardCounter.limit) ? -1 : cardCounter.cardCnt
+	},
+	incr: () => {
+		cardCounter.cardCnt += 1
+		sess.set('cardCnt', cardCounter.cardCnt)
+	}
 }
