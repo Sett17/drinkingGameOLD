@@ -67,6 +67,7 @@ function init(site) {
 			break
 		default:
 			changePage('startmenu')
+			currPage = startMenu
 			break
 	}
 }
