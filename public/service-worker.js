@@ -54,6 +54,9 @@ self.addEventListener('fetch', (e) => {
 		)
 	} else {
 		fetch(e.request).then((r) => {
+			// throws error: *Failed to execute 'fetch' on 'WorkerGlobalScope': 'only-if-cached' can be set only with 'same-origin' mode*
+			// this error only occurs when opening devtools. this is a chromium bug
+			// for more tal@ https://stackoverflow.com/questions/48463483/what-causes-a-failed-to-execute-fetch-on-serviceworkerglobalscope-only-if
 			if (r) {
 				console.log(`[Service Worker] [Respone] served ${e.request.url} from WEB`)
 				caches.match(e.request).then((inCache) => {

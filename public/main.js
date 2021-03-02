@@ -89,7 +89,7 @@ function chooseCard() {
 
 function addCard(card) {
 	if (currPage === playPage) {
-		while (document.querySelector('#card') === null) { } // note nice, but still good way for this?!
+		while (document.querySelector('#card') === null) { } // not nice, but still good way for this?!
 		document.querySelector('#card').outerHTML = makeCard(card) // replace element
 		// reset card, variables in helpers.js
 		document.querySelector('#card').style.transition = 'all 0ms'
