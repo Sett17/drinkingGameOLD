@@ -217,4 +217,53 @@ const cards = [
         "all": false,
         "set": "Minigame"
     },
+    {
+        "title": "double or nothing",
+        "text": "Alle ungeraden Schlucke werden verdoppel",
+        "sips": 1,
+        "all": true,
+        "set": "Virus"
+    },
+    {
+        "title": "Numer 17 mit süß-sauer",
+        "text": "Gerichte die man bei jedem Asiaten bekommen kann. [NAME1] startet! Wem als erstes nix mehr enifällt trinkt!",
+        "sips": 3,
+        "all": true,
+        "set": "Minigame"
+    },
+    {
+        "title": "Gewinn-Ausgaben=PROFIT",
+        "text": "Trinke wenn du etwas in Richtung Wirtschaft oder BWL studierst",
+        "sips": 3,
+        "all": true,
+        "set": "Wahrheit"
+    },
+    {
+        "title": "Wieviele Finger?",
+        "text": "Wenn du Brillenträger bist, trinke",
+        "sips": 3,
+        "all": true,
+        "set": "Pflicht"
+    },
+    {
+        "title": "Wünsch dir was",
+        "text": "Sag etwas was du noch nie gemacht hast, aber schon immer machen wolltest. Jeder der es schon gemacht hat trinkt! [NAME1] startet",
+        "sips": 4,
+        "all": true,
+        "set": "Minigame"
+    },
+    {
+        "title": "ABCDEFG",
+        "text": "Sage das Alphabet rückwärts auf, wenn du einen Fehler machst fange von vorne an. Du hast 3 Leben!",
+        "sips": -1,
+        "all": false,
+        "set": "Pflicht"
+    },
+    {
+        "title": "Uuhhhhh",
+        "text": "Trink so viele Schlücke wie es schöne Brüste es im gibt",
+        "sips": -1,
+        "all": false,
+        "set": "Pflicht"
+    },
 ]
