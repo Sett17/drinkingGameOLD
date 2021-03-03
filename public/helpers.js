@@ -378,7 +378,7 @@ const playerList = {
 
 const cardCounter = {
 	// obj to keep track of how into the game u are
-	limit: 10, // hard coded game length
+	limit: 25, // hard coded game length
 	cardCnt: 0,
 	get: () => {
 		cardCounter.cardCnt = cardCounter.cardCnt
