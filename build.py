@@ -86,7 +86,8 @@ def doRelease():
         raise RuntimeError('Look above for Error from "firebase deploy"')
 
     print('\x1b[4GExecuting \x1b[38;5;147mseveral git commands\x1b[0m... \x1b[90m(output partially supressed)')
-    gitExitCode = os.system('git add . --all ' + removeError + ' && git commit --allow-empty -m "$DATE" ' + removeOutput + '&& git push')
+    gitExitCode = os.system('git add . --all ' + removeError + ' && git commit --allow-empty -m "Build and Deploy from build.py at ' +
+                            datetime.now().strftime("%d.%m.%y %H:%M") + '" ' + removeOutput + '&& git push')
     if gitExitCode == 0:
         print('\x1b[6G\x1b[32mSuccessfully executed \x1b[38;5;147mseveral git commands\x1b[32m\x1b[0m')
     else:
