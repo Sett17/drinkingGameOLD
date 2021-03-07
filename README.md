@@ -1,8 +1,12 @@
-# drinkingGame OLD
+# drinkingGame
 
-THIS REP WILL NO LONGER BE CONTINUED!
 
-Please take a look [here]()
+## Build
+Tested on Linux (WSL) and Windows
 
-## Why?
-To make my life easier by using some kinda of a build script and to improve the codebase in general. ~~Recoding~~ Re-Orientation.
+To build and deploy run:
+```bash
+pip3 install -r requirements.txt
+python3 build.py
+```
+**IMPORTANT** Do'nt use `py`/`py3`, you must use `python`/`python3`
