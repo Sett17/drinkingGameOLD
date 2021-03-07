@@ -123,3 +123,5 @@ doRefactor()
 doMinifying()
 
 doRelease()
+
+print('\x1b[1E\x1b[32mBuild script was successfully executed. Well done!')
