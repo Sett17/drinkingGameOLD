@@ -1,4 +1,4 @@
-cacheName='build21.066.2238'
+cacheName='build21.066.2244'
 const toCache={'index.html':false,'index.html?page=startmenu':false,'?page=startmenu':false,'index.html?page=pregame':false,'?page=pregame':false,'index.html?page=play':false,'?page=play':false,'main.js':false,'helpers.js':false,'options.js':false,'style.css':true,'manifest.webmanifest':true,'assets/cards.js':false,'assets/icon-ios.png':true,'assets/icon.webp':true,'assets/icon.png':true,'assets/maskable_icon.png':true,'assets/SF-UI-Text-Regular.otf':true,'compos/card.compo':true,'compos/play.compo':true,'compos/pregame.compo':true,'compos/startmenu.compo':true,'compos/options.compo':true,}
 self.addEventListener('fetch',(e)=>{console.log(`[Service Worker] [Request] req to ${e.request.url}`)
 if(toCache[e.request.url.replace(e.request.referrer,'')]){e.respondWith(caches.match(e.request).then((r)=>{if(r){console.log(`[Service Worker] [Respone] served ${e.request.url} from CACHE`)
