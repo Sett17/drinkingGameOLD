@@ -1,1 +1,3 @@
+psutil
+jsmin
 minify-html
