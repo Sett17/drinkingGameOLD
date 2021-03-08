@@ -23,8 +23,8 @@ def doRefactor():
     print('\nRefactoring:')
     # minutesOfDay = str(int(datetime.now().strftime("%H")) * 60 + int(datetime.now().strftime("%M"))).zfill(4)
     print(f'\x1b[4G\x1b[90mBuild number:\x1b[0m {datetime.now().strftime("%y.%j.%H%M")}')
-    Path('./build/main.js').write_text(Path('./build/main.js').read_text().replace('#BUILDNUMBER#', 'build' + datetime.now().strftime("%y.%j.%H%M")))
-    Path('./build/service-worker.js').write_text(Path('./build/service-worker.js').read_text().replace('#BUILDNUMBER#', 'build' + datetime.now().strftime("%y.%j.%H%M")))
+    Path('./build/main.js').write_text(Path('./build/main.js').read_text().replace('#BUILDNUMBER#', 'build.' + datetime.now().strftime("%y.%j.%H%M")))
+    Path('./build/service-worker.js').write_text(Path('./build/service-worker.js').read_text().replace('#BUILDNUMBER#', 'build.' + datetime.now().strftime("%y.%j.%H%M")))
     print(f'\x1b[4G\x1b[32mBuild number set in appropiate files\x1b[0m')
 
 
