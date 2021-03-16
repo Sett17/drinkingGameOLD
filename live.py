@@ -1,6 +1,6 @@
 from livereload import Server, shell
 print("Only use in dev")
 server = Server()
-server.watch('./public')
+server.watch('./dev')
 server.setHeader('Access-Control-Allow-Origin', '*')
-server.serve(root='./public')
+server.serve(root='./dev')

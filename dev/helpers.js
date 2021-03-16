@@ -14,6 +14,21 @@ function isMobile() {
 	}
 	return hasTouchScreen
 }
+
+function loadCSS( cssURL ) {
+    // 'cssURL' is the stylesheet's URL, i.e. /css/styles.css
+    return new Promise( function( resolve, reject ) {
+        var link = document.createElement( 'link' );
+        link.rel  = 'stylesheet';
+        link.href = cssURL;
+        document.head.appendChild( link );
+        link.onload = function() { 
+            resolve(); 
+            console.log( 'CSS has loaded!' ); 
+        };
+    } );
+}
+
 class Session extends Map {
 	set(id, value) {
 		if (typeof value === 'object') value = JSON.stringify(value)
