@@ -15,7 +15,7 @@ To build and deploy run:
 pip3 install -r requirements.txt
 python3 build.py
 ```
-**IMPORTANT** Do'nt use `py`/`py3`, you must use `python`/`python3`
+**IMPORTANT** Don't use `py`/`py3`, you must use `python`/`python3`
 
 # Deutsch
 Das ist der Quellcode für [dieses Trinkspiel](http://drinkingapp-4376b.web.app/). Es kann entweder auf der Internetseite gespielt werden, oder als PWA installiert werden auf unterstützten Geräten.
