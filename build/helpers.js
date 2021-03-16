@@ -2,6 +2,7 @@ function isMobile(){let hasTouchScreen=false
 if('maxTouchPoints'in navigator){hasTouchScreen=navigator.maxTouchPoints>1}else if('msMaxTouchPoints'in navigator){hasTouchScreen=navigator.msMaxTouchPoints>1}else{var mQ=window.matchMedia&&matchMedia('(pointer:coarse)')
 if(mQ&&mQ.media==='(pointer:coarse)'){hasTouchScreen=!!mQ.matches}else if('orientation'in window){hasTouchScreen=true}}
 return hasTouchScreen}
+function loadCSS(cssURL){return new Promise(function(resolve,reject){var link=document.createElement('link');link.rel='stylesheet';link.href=cssURL;document.head.appendChild(link);link.onload=function(){resolve();console.log('CSS has loaded!');};});}
 class Session extends Map{set(id,value){if(typeof value==='object')value=JSON.stringify(value)
 sessionStorage.setItem(id,value)}
 get(id){const value=sessionStorage.getItem(id)

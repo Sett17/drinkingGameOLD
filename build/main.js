@@ -1,4 +1,4 @@
-cacheName='build.21.067.2302'
+cacheName='build.21.075.2337'
 document.querySelector('#version').innerHTML=cacheName
 const startMenu='./compos/startmenu.compo'
 const preGame='./compos/pregame.compo'
