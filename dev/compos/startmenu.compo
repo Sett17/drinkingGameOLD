@@ -1,0 +1,7 @@
+<div id="startMenu-title">Trink!Trink!</div>
+<div class="startMenu-btns"><button class="startMenu-btn btn" id="playBtn"
+        onclick="changePage('pregame')">Spielen!</button><button class="startMenu-btn btn" id="optionbBtn"
+        onclick="changePage('options')">Einstellungen</button></div>
+<div class="startMenu-btns"><a href="https://forms.gle/EUaUgct3Ky69Cjon9" target="_blank" rel="noreferrer"><button
+            class="startMenu-btn btn" id="settingsBtn">Karten Idee</button></a><button class="startMenu-btn btn"
+        id="shareBtn" onclick="shareRoutine()">Teilen</button></div>
