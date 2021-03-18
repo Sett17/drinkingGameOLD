@@ -7,6 +7,14 @@ For historial Commits and and older code look in [this rep](https://github.com/S
 ## Contribute
 You are very welcome to contribute! Please make a pull request with the updated [cards.js](dev/assets/cards.js).
 
+## Run
+You can either run the live.py (appropiate python librabries needed) or start a webserver in the `/dev` folder.
+Known-To-Work Example:
+```cmd
+cd /path/to/project/dev/
+python3 -m http.server
+```
+
 ## Build
 Tested on Linux (WSL) and Windows
 
@@ -23,6 +31,15 @@ Für historische Commits und alten Code, schaue in [dieser rep](https://github.c
 
 ## Mitwirken
 Du bist gerne zum mitwirken eingeladen! Mache dafür ein Pull Request mit der ergänzten [cards.js](dev/assets/cards.js) oder schlag eine Idee in [diesem form](https://docs.google.com/forms/d/e/1FAIpQLSejdu8sNK8tI5Y3IP0LySg17WXdkxn9s_UeRKLBvFt3kKV_Vg/viewform) vor.
+
+## Run
+Du kannst entweder die live.py starten (benötigt weitere bibliotheken) oder einen webserver im `/dev` ordner starten.
+Known-To-Work Beispiel:
+```cmd
+cd /path/to/project/dev/
+python3 -m http.server
+```
+
 
 ## Build
 Getestet auf Linux (WSL) und Windows
