@@ -5,6 +5,7 @@ from pathlib import Path
 from datetime import datetime
 import glob
 import psutil
+import re
 
 
 def doPrebuild():
@@ -17,14 +18,21 @@ def doPrebuild():
         os.popen('rm -rf ./build/*').read()
     os.popen('cp -rf ./dev/* ./build/').read()
     print('\x1b[4G\x1b[32mCopied all files to ./build\x1b[0m')
+    print('\x1b[4GGenerating Service Worker: \x1b[38;5;147mworkbox generateSW workboxBuild.js\x1b[90m')
+    os.popen('workbox generateSW workboxBuild.js').read()
+    print('\x1b[4G\x1b[32mGenerated SW files in ./build\x1b[0m')
+
 
 
 def doRefactor():
     print('\nRefactoring:')
     # minutesOfDay = str(int(datetime.now().strftime("%H")) * 60 + int(datetime.now().strftime("%M"))).zfill(4)
     print(f'\x1b[4G\x1b[90mBuild number:\x1b[0m {datetime.now().strftime("%y.%j.%H%M")}')
-    Path('./build/main.js').write_text(Path('./build/main.js').read_text().replace('#BUILDNUMBER#', 'build.' + datetime.now().strftime("%y.%j.%H%M")))
-    Path('./build/service-worker.js').write_text(Path('./build/service-worker.js').read_text().replace('#BUILDNUMBER#', 'build.' + datetime.now().strftime("%y.%j.%H%M")))
+    buildnumber = 'build.' + datetime.now().strftime("%y.%j.%H%M")
+    for file in compressFiles:
+        if re.search('#BUILDNUMBER#', Path(file).read_text()):
+            Path(file).write_text(Path(file).read_text().replace('#BUILDNUMBER#', buildnumber))
+            print('\x1b[6G\x1b[90mSet in ' + '/'.join(file.split('/')[:-1]) + '/' + '\x1b[32m' + file.split('/')[-1] + '\x1b[0m')
     print(f'\x1b[4G\x1b[32mBuild number set in appropiate files\x1b[0m')
 
 
@@ -122,6 +130,6 @@ doRefactor()
 
 doMinifying()
 
-doRelease()
+# doRelease()
 
-print('\x1b[1E\x1b[32mBuild script was successfully executed. Well done!')
+print('\x1b[2E\x1b[32mBuild script was successfully executed. Well done!')
