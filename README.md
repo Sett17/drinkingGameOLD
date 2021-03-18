@@ -10,7 +10,7 @@ You are very welcome to contribute! Please make a pull request with the updated 
 ## Run
 You can either run the live.py (appropiate python librabries needed) or start a webserver in the `/dev` folder.
 Known-To-Work Example:
-```cmd
+```bash
 cd /path/to/project/dev/
 python3 -m http.server
 ```
@@ -35,7 +35,7 @@ Du bist gerne zum mitwirken eingeladen! Mache dafür ein Pull Request mit der er
 ## Run
 Du kannst entweder die live.py starten (benötigt weitere bibliotheken) oder einen webserver im `/dev` ordner starten.
 Known-To-Work Beispiel:
-```cmd
+```bash
 cd /path/to/project/dev/
 python3 -m http.server
 ```
