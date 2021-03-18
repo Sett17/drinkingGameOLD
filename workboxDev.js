@@ -4,4 +4,5 @@ module.exports = {
     "**/*.{svg,js,png,webp,otf,compo,html,webmanifest,css}"
   ],
   "swDest": "dev/sw.js",
+  "cleanupOutdatedCaches": true,
 };
