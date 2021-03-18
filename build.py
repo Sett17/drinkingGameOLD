@@ -130,6 +130,6 @@ doRefactor()
 
 doMinifying()
 
-# doRelease()
+doRelease()
 
 print('\x1b[2E\x1b[32mBuild script was successfully executed. Well done!')
