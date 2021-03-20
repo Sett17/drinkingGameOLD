@@ -1,3 +1,5 @@
+This is a *lost* git I just added here as a branch for keeping it, this while git is just an archive
+
 # drinkingGame
 ***There is currently no plan to support internalization! This Project is in German!***
 
